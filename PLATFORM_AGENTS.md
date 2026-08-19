@@ -19,7 +19,18 @@ it.
 
 - League, Tournament, Player Profile, Account, and the marketing Website are
   five separately deployed products. Each keeps its own repository, database,
-  queues, configuration, backups, credentials, and operational state.
+  network, queues, configuration, backups, credentials, and operational
+  state.
+- Network isolation is provided by each product shipping its own
+  `docker-compose.yml` in its own repository, deployed as its own Compose
+  project. This is not extra configuration — it is the default behavior of
+  running each product as a separate Compose project, and it falls directly
+  out of each product already being a separate repository. A shared reverse
+  proxy (Caddy) may join more than one product's network to route by
+  hostname, matching the pattern PoolLeagueWeb already uses to route its own
+  Production/SB/Demo environments by domain. Two products' backend
+  containers must not be reachable from one another at the network layer
+  absent an explicit, documented reason.
 - No product's runtime code queries another product's database directly, and
   no two products share a database, connection string, or credential.
 - A product must remain fully operational if every other product is down,
