@@ -201,7 +201,30 @@ cost/account ownership, DNS, legal/compliance behavior, real external
 delivery, or activation of a live payment provider. Use reversible,
 cost-free defaults otherwise.
 
-## 9. Relationship To League's Existing AGENTS.md
+## 9. GitHub Issue Reconciliation
+
+Before proposing or starting a new owner request in any platform repository,
+cross-check it against that repository's live open GitHub issues. Do not rely
+only on remembered issue state, titles, or a prior handoff.
+
+- When an issue may be relevant, inspect its complete description, comments,
+  milestone, relationships, and linked pull requests before deciding scope.
+- Pull compatible acceptance criteria, guardrails, dependencies, and explicit
+  exclusions into the current proposal and implementation inventory.
+- If an open issue conflicts with the request, another issue, repository
+  boundaries, or an approval already given, stop and obtain an explicit owner
+  decision instead of silently choosing one source of scope.
+- Distinguish full issue coverage from partial coverage. Do not close a broad
+  issue merely because the current task completed one portion of it.
+- Recheck relevant live issues before merge, release, or issue closure so a
+  newly added requirement or conflict is not missed.
+- Discovery alone does not authorize editing, closing, relabeling, assigning,
+  or moving an issue. Make those GitHub changes only when the owner requested
+  them or separately approved the exact mutation.
+- Keep the check focused and batched. Do not repeatedly rescan unchanged issue
+  state or unrelated repositories.
+
+## 10. Relationship To League's Existing AGENTS.md
 
 `PoolLeagueWeb/AGENTS.md` currently contains both platform-wide rules (which
 this document now centralizes) and League-specific rules (score sheet
@@ -215,7 +238,7 @@ removing the now-duplicated platform-wide sections. This should be proposed
 as a reviewable, visible diff against a live production repo — not an
 implicit or silent rewrite.
 
-## 10. Open Items Requiring An Explicit Owner Decision
+## 11. Open Items Requiring An Explicit Owner Decision
 
 - Exact token format/library (e.g., JWT with a specific signing algorithm)
   and key rotation policy for Account-issued identity tokens.
