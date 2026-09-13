@@ -17,5 +17,6 @@ matching the pattern already established in `PoolLeagueWeb`.
 
 ## Status
 
-Draft. `PLATFORM_AGENTS.md` is pending final owner review — see its
-"Status" line and Section 10 (Open Items) before treating it as final.
+`PLATFORM_AGENTS.md` was approved by the owner on 2026-09-13. Its explicitly
+listed open security and hosting decisions remain owner-gated; approval of the
+working rules does not silently decide those product-design questions.
