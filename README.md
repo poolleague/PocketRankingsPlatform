@@ -15,6 +15,12 @@ it, so the interface is designed against real usage rather than a guess.
 Until then, each product implements its own local version of that logic,
 matching the pattern already established in `PoolLeagueWeb`.
 
+## Architecture reference
+
+See [`PRODUCT_REPOSITORY_ARCHITECTURE.md`](PRODUCT_REPOSITORY_ARCHITECTURE.md)
+for the repository interaction diagram and the authoritative placement of
+customer-facing webpages.
+
 ## Status
 
 `PLATFORM_AGENTS.md` was approved by the owner on 2026-09-13. Its explicitly
