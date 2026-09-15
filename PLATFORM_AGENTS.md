@@ -328,3 +328,116 @@ implicit or silent rewrite.
 - Naming/hosting plan for each product's subdomain under `pocketrankings.com`,
   matching the pattern already visible in League's Caddy configuration
   (e.g. `blair8.pocketrankings.com`, `blair8-sb.pocketrankings.com`).
+
+## 11. SOC 2 Readiness And Control Evidence
+
+The owner selected SOC 2 Type I readiness for Security, Availability, and
+Confidentiality first, followed by Type II after controls have operated for an
+auditor-selected observation period. Privacy and Processing Integrity remain
+design requirements where applicable even when they are outside the initial
+report scope.
+
+- Never claim that Pocket Rankings is SOC 2 compliant, certified, or audited
+  unless an independent licensed CPA firm has issued the applicable report and
+  the claim accurately reflects its scope and period. Repository controls are
+  readiness measures, not an attestation.
+- Maintain a versioned system description, product/data-flow inventory, asset
+  inventory, data classification, control matrix, named control owners, risk
+  register, vendor register, and evidence index. Review them at least annually
+  and after material architecture, provider, security, or data-lifecycle
+  changes.
+- Production and administrative access requires named individual identities,
+  phishing-resistant MFA where supported, least privilege, separation of
+  duties for high-risk changes, prompt offboarding, and periodic documented
+  access reviews. Shared credentials and unrecorded emergency access are
+  prohibited.
+- Every change uses a traceable request, feature branch, reviewable diff,
+  applicable automated validation, approval, immutable commit, deployment
+  evidence, and rollback plan. Emergency changes require recorded authority,
+  bounded scope, validation, and timely retrospective review; urgency never
+  permits silent or untracked changes.
+- Maintain dependency, secret, static-analysis, configuration, and
+  vulnerability scanning. Findings have a recorded severity, owner, due date,
+  remediation or formally approved time-bounded exception, and verification.
+  Never weaken a scan or threshold to obtain a passing result.
+- Encrypt confidential data in transit and at rest. Secrets use an approved
+  secret store, narrow service identities, rotation, revocation, inventory,
+  and access evidence. Secrets never enter source, logs, screenshots, test
+  artifacts, tickets, or chat.
+- Security, authentication, authorization, privacy, administrative, backup,
+  restore, deployment, configuration, and integration events produce bounded,
+  tamper-resistant, time-synchronized evidence. Alerting is tested; sensitive
+  content is minimized and redacted.
+- Maintain approved incident-response, escalation, evidence-preservation,
+  customer-communication, business-continuity, disaster-recovery, backup,
+  and restoration procedures. Test them on a documented cadence and track
+  corrective actions to closure. Production RTO, RPO, availability targets,
+  and alert ownership require explicit owner approval before launch.
+- Assess service providers before use and periodically thereafter for data
+  access, security, availability, confidentiality, privacy, retention,
+  incident notification, subcontractors, and exit capability. Provider terms
+  or attestations do not replace Pocket Rankings' own controls.
+- Security and privacy training, confidentiality commitments, background
+  screening decisions, personnel onboarding/offboarding, and policy
+  acknowledgments are company controls outside source code but must have named
+  owners and retained evidence before an audit period begins.
+- Evidence retention, privacy deletion, backup expiration, and legal holds
+  follow the approved data-lifecycle policy. Compliance evidence must prove
+  that an action occurred without retaining deleted personal or secret data.
+- Record every control exception with scope, risk, compensating control,
+  approver, expiration, and closure evidence. Agents may surface or document
+  gaps but may not self-approve exceptions or represent readiness as achieved.
+
+See `SOC2_READINESS.md` for the operating checklist and evidence boundaries.
+
+## 12. Purchase Provisioning And Data Lifecycle
+
+- League and Tournament are separate products and separate purchases. Buying
+  one never silently provisions or grants the other.
+- Account, Player Profile, and the marketing Website are shared services.
+  Each purchased League or Tournament customer product receives an isolated
+  runtime stack, database, storage, configuration, credentials, backups, and
+  hostname from the same immutable approved product image.
+- Purchase confirmation, entitlement grant, provisioning, readiness, and
+  customer notification are distinct idempotent states. A payment webhook
+  never runs infrastructure work inline and never marks a product ready before
+  health, schema, isolation, and administrator-handoff checks pass.
+- Cancellation disables product access immediately. Operational League or
+  Tournament data remains recoverable for 61 calendar days beginning when
+  that product's subscription or entitlement ends, then the product stack,
+  database, storage, and expired backups are deleted through an evidenced,
+  retry-safe workflow. A specifically authorized legal hold pauses deletion
+  without restoring customer access.
+- Normal customer-product deletion may leave Player Profile with only bounded
+  player-level results, statistics, exact source identity, and provenance.
+  Score sheets, brackets, teams, contacts, and customer operational data do
+  not transfer to or remain in Player Profile.
+- An authenticated player's global player-data opt-out is different from
+  customer-product cancellation. It keeps Account login, purchases,
+  entitlements, and necessary security/transaction records active while
+  immediately and irreversibly erasing Player Profile data and anonymizing
+  the person's participant identity inside retained League and Tournament
+  history.
+- Anonymization replaces each local participant with a product-installation-
+  specific random surrogate and neutral label such as `Deleted player A7K4`.
+  Remove names, contacts, PersonId, profile/source links, media, and other
+  identifying fields. Never retain a mapping back to the person or reuse one
+  surrogate across products or customer installations.
+- Historical score sheets, standings, brackets, matches, results, placements,
+  and payouts may continue referencing the anonymous local participant. A
+  privacy-safe audit proves anonymization occurred without retaining erased
+  values.
+- Player Profile keeps only a keyed, purpose-bound suppression value needed to
+  reject accidental recreation or future projections. Opting back in creates
+  a new profile from future activity; erased data is never silently rebuilt.
+- A destructive privacy request requires recent authentication, explicit
+  irreversible-action confirmation, CSRF protection, idempotency, signed
+  product directives, per-target acknowledgments, and visible completion or
+  failure state. Do not claim completion until every in-scope product has
+  acknowledged its action.
+- Backups containing erased data expire under policy and remain inaccessible
+  for ordinary use. Any authorized restoration must replay the durable
+  deletion ledger before the restored system can serve traffic.
+
+See `DATA_LIFECYCLE.md` and `AUTOMATED_PROVISIONING.md` for the approved
+cross-product workflows.

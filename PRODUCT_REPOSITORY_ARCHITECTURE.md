@@ -72,6 +72,15 @@ flowchart TD
 - League and Tournament send versioned, authenticated events to Player Profile after the cross-product transport is approved. Player Profile does not scrape or directly query either source database.
 - The Platform repository may document a shared visual language and proven contracts. Shared runtime code requires a separately approved, versioned internal-library phase.
 - A shared reverse proxy may route different hostnames to the correct product, but routing does not combine their containers or databases.
+- League and Tournament are purchased and provisioned separately. Each
+  customer product receives its own isolated runtime stack and database from
+  the same validated product image; it does not receive a new repository or
+  customer-specific build.
+- Account, Player Profile, and the marketing Website remain shared services.
+
+See [`AUTOMATED_PROVISIONING.md`](AUTOMATED_PROVISIONING.md) for purchase
+provisioning and [`DATA_LIFECYCLE.md`](DATA_LIFECYCLE.md) for the 61-day
+customer-product retention and global player-data opt-out workflows.
 
 ## Public website status
 

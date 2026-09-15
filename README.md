@@ -21,6 +21,15 @@ See [`PRODUCT_REPOSITORY_ARCHITECTURE.md`](PRODUCT_REPOSITORY_ARCHITECTURE.md)
 for the repository interaction diagram and the authoritative placement of
 customer-facing webpages.
 
+Additional platform references:
+
+- [`AUTOMATED_PROVISIONING.md`](AUTOMATED_PROVISIONING.md) — separate-product
+  purchase provisioning and customer-isolated runtime stacks
+- [`DATA_LIFECYCLE.md`](DATA_LIFECYCLE.md) — 61-day customer retention and
+  irreversible player-data anonymization
+- [`SOC2_READINESS.md`](SOC2_READINESS.md) — Type I/Type II preparation,
+  control ownership, and evidence expectations
+
 ## Status
 
 `PLATFORM_AGENTS.md` was approved by the owner on 2026-09-13. Its explicitly
