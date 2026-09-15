@@ -388,7 +388,11 @@ report scope.
   approver, expiration, and closure evidence. Agents may surface or document
   gaps but may not self-approve exceptions or represent readiness as achieved.
 
-See `SOC2_READINESS.md` for the operating checklist and evidence boundaries.
+See `SOC2_READINESS.md`, `SOC2_CONTROL_MATRIX.md`, `RISK_REGISTER.md`,
+`EVIDENCE_INDEX.md`, `ASSET_VENDOR_REGISTER.md`,
+`INCIDENT_RESPONSE_PLAN.md`, `BUSINESS_CONTINUITY_PLAN.md`, and
+`CONTROL_EXCEPTION_REGISTER.md` for the readiness records. Templates and
+planned controls are not operating evidence.
 
 ## 12. Purchase Provisioning And Data Lifecycle
 

@@ -29,6 +29,11 @@ Additional platform references:
   irreversible player-data anonymization
 - [`SOC2_READINESS.md`](SOC2_READINESS.md) — Type I/Type II preparation,
   control ownership, and evidence expectations
+- [`SOC2_CONTROL_MATRIX.md`](SOC2_CONTROL_MATRIX.md), [`RISK_REGISTER.md`](RISK_REGISTER.md), and [`EVIDENCE_INDEX.md`](EVIDENCE_INDEX.md) — initial readiness registers that still require named human owners and operating evidence
+- [`READINESS_DECISIONS.md`](READINESS_DECISIONS.md) — owner, provider, recovery, legal, and auditor decisions that code cannot make
+- [`ASSET_VENDOR_REGISTER.md`](ASSET_VENDOR_REGISTER.md) — system and provider inventory template
+- [`INCIDENT_RESPONSE_PLAN.md`](INCIDENT_RESPONSE_PLAN.md) and [`BUSINESS_CONTINUITY_PLAN.md`](BUSINESS_CONTINUITY_PLAN.md) — response and recovery procedures requiring named owners and exercises
+- [`CONTROL_EXCEPTION_REGISTER.md`](CONTROL_EXCEPTION_REGISTER.md) — expiring, owner-approved control deviations
 
 ## Status
 

@@ -1,0 +1,29 @@
+name: Validate Platform Governance
+
+on:
+  push:
+    branches: [main, "codex/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  governance-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require the approved governance inventory
+        run: |
+          test -s PLATFORM_AGENTS.md
+          test -s PRODUCT_REPOSITORY_ARCHITECTURE.md
+          test -s AUTOMATED_PROVISIONING.md
+          test -s DATA_LIFECYCLE.md
+          test -s SOC2_READINESS.md
+          test -s SOC2_CONTROL_MATRIX.md
+          test -s RISK_REGISTER.md
+          test -s EVIDENCE_INDEX.md
+          test -s READINESS_DECISIONS.md
+      - name: Prevent certification misstatement
+        run: grep -qi "not a certification claim" SOC2_READINESS.md
